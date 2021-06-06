@@ -15,7 +15,7 @@ public:
         {
             Abonent_t* abonent = new Abonent_t;
             std::string user_input;
-            
+
             std::cout << "type name: ";
             std::cin >> user_input;
             abonent->name = user_input;
@@ -91,22 +91,31 @@ public:
                       " +" << list[i].region_code <<
                       "<" << list[i].number << ">\n";
         }
-        std::cout << "WHOM DO YOU WANT TO SEND SMS?: ";
+        std::cout << "\nWHOM DO YOU WANT TO SEND SMS?: ";
         std::cin >> user_input;
         for(int i = 0; i < list.size(); i++)
         {
             if(user_input == list[i].name || user_input == list[i].number)
             {
-                std::string message;
-                std::cout << "type your message: ";
-                std::getline(std::cin, message); // DOESN'T WORK NOW
-                std::cout << "\nYOUR sms <" << message << "> TO: " << list[i].name <<
+                std::string message = input_sms_text();
+                std::cout << "\nYOUR SMS \n<" << message << ">\nTO: " << list[i].name <<
                           " +" << list[i].region_code <<
-                          "<" << list[i].number << "> was sent\n";
+                          "<" << list[i].number << "> was sent\n\n";
                 return;
             }
         }
         std::cout << "NO SUCH CONTACT or NUMBER" << std::endl;
     }
 
+    std::string input_sms_text()
+    {
+        //below are different tipes of possible input for miltiply words in the string
+        std::string message;
+        std::cout << "type your message: ";
+        //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //this helps
+        //std::cin >> std::ws; //this helps
+        std::getline(std::cin, message); // this also helps
+        std::getline(std::cin, message); // main message input
+        return message;
+    }
 };
