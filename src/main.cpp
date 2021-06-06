@@ -3,11 +3,12 @@
 
 int main()
 {
+    Phone_t* phone = new Phone_t;
+    phone->emptyFunction();
+    std::string command = "none";
+
     do
     {
-        Phone_t* phone = new Phone_t;
-        std::string command = "none";
-
         std::cout << "type the command add/sms/call/exit : ";
         std::cin >> command;
         if(command == "add") phone->add();

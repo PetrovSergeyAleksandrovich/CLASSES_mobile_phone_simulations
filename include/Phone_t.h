@@ -14,5 +14,6 @@ public:
     void call();
     void sms();
     std::string input_sms_text();
+    void emptyFunction();
 };
 

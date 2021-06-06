@@ -1,5 +1,10 @@
 #include "Phone_t.h"
 
+void Phone_t::emptyFunction()
+{
+    std::cout << "from Phone.h -> new object generated" << std::endl;
+}
+
 std::string Phone_t::input_sms_text()
 {
     //below are different types of possible input for miltiply words in the string
@@ -17,6 +22,7 @@ void Phone_t::add()
     while(true)
     {
         Abonent_t* abonent = new Abonent_t;
+        abonent->emptyFunction();
         std::string user_input;
 
         std::cout << "type name: ";
