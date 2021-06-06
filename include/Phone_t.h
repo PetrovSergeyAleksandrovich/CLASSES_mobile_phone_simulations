@@ -15,8 +15,7 @@ public:
         {
             Abonent_t* abonent = new Abonent_t;
             std::string user_input;
-
-            std::cout << "->in while\n";
+            
             std::cout << "type name: ";
             std::cin >> user_input;
             abonent->name = user_input;
